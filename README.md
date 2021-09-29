@@ -9,7 +9,15 @@ For information on how the dataset was collected or to get access to the AMT set
 
 ## The Visually Grounded Memory Assistant Dataset
 
-Contains human participants participating in the task Memory Question Answering with Navigation (MemQA). Please refer the [video](https://www.youtube.com/watch?v=T97r2leqFyQ)
+Contains human participants participating in the task Memory Question Answering with Navigation (MemQA). 
+
+This repository focuses on the LED task
+<p align="center">
+  <img width="627" height="242" src="./src/teaser.pdf" alt="Visual Assistant">
+</p>
+
+
+Please refer the [video](https://www.youtube.com/watch?v=T97r2leqFyQ) to understand the task further. 
 
 The task was encapsulated in the 3D simulated indoor environments from the Matterport3D dataset and was run on Amazon Mechanical Turk.
 
