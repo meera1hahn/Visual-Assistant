@@ -1,21 +1,15 @@
 # Visual-Assistant
-Learning a visually grounded memory assistant
-
-This is an implementation of the paper: Learning a Visually Grounded Memory Assistant
-
-This repository contains the data, the data analysis and the results for TaskA presented in the paper
-
-For information on how the dataset was collected or to get access to the AMT set up please contact the authors. 
+* This is an implementation of the paper: [Learning a Visually Grounded Memory Assistant](https://arxiv.org/)
+* This repository contains the data, the data analysis and the results for TaskA presented in the paper
+* For information on how the dataset was collected or to get access to the AMT set up please contact the authors. 
+* This repository focuses Visual Memory Assistant tasks on the presented dataset
+<p align="center">
+  <img width="408" height="317" src="./src/teaser.jpg" alt="Visual Assistant">
+</p>
 
 ## The Visually Grounded Memory Assistant Dataset
 
 Contains human participants participating in the task Memory Question Answering with Navigation (MemQA). 
-
-This repository focuses on the LED task
-<p align="center">
-  <img width="627" height="242" src="./src/teaser.jpg" alt="Visual Assistant">
-</p>
-
 
 Please refer the [video](https://www.youtube.com/watch?v=T97r2leqFyQ) to understand the task further. 
 
