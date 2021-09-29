@@ -13,7 +13,7 @@ Contains human participants participating in the task Memory Question Answering 
 
 This repository focuses on the LED task
 <p align="center">
-  <img width="627" height="242" src="./src/teaser.pdf" alt="Visual Assistant">
+  <img width="627" height="242" src="./src/teaser.jpg" alt="Visual Assistant">
 </p>
 
 
