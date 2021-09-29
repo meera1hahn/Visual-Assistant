@@ -11,9 +11,9 @@ For information on how the dataset was collected or to get access to the AMT set
 
 Contains human participants participating in the task Memory Question Answering with Navigation (MemQA). 
 
-This repository focuses on the LED task
+This repository focuses Visual Memory Assistant tasks on this dataset
 <p align="center">
-  <img width="627" height="242" src="./src/teaser.jpg" alt="Visual Assistant">
+  <img width="408" height="317" src="./src/teaser.jpg" alt="Visual Assistant">
 </p>
 
 
