@@ -7,7 +7,7 @@ The data from this AMT study has been filtered and stored in an MySQL database w
 
 First you need to install MySQL: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
 
-Install MySQLdb for python: `pip 
+Install [MySQLdb](https://pypi.org/project/mysqlclient/) for python: `pip install mysqlclient` 
 
 ### Read Dataset Dump
 
