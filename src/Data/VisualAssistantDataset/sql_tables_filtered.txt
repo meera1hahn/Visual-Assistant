@@ -1,0 +1,87 @@
+Table: questionset
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| qSetId           | varchar(255) | NO   | PRI | NULL    |       |
+| pathList         | text         | NO   |     | NULL    |       |
+| questionIdList   | text         | NO   |     | NULL    |       |
+| questionList     | text         | NO   |     | NULL    |       |
+| ogAnswerList     | text         | NO   |     | NULL    |       |
+| answerList       | text         | NO   |     | NULL    |       |
+| questionTypeList | text         | NO   |     | NULL    |       |
+| imgIdList        | text         | NO   |     | NULL    |       |
+| locationNameList | varchar(255) | NO   |     | NULL    |       |
+| scan             | varchar(255) | NO   |     | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+
+
+Table: amthits
++------------------+--------------+------+-----+---------+-------+
+| Field            | Type         | Null | Key | Default | Extra |
++------------------+--------------+------+-----+---------+-------+
+| id               | varchar(255) | NO   | PRI | NULL    |       |
+| workerId         | varchar(255) | NO   |     | NULL    |       |
+| hitId            | varchar(255) | NO   |     | NULL    |       |#unique token
+| status           | varchar(255) | NO   |     | NULL    |       |# --["finished" or "started"] -- only use finished hits
+| created_at       | int(11)      | NO   |     | NULL    |       |#when hit was started
+| completed_at     | int(11)      | NO   |     | NULL    |       |#when hit was finished
+| fly_through_time | int(11)      | NO   |     | NULL    |       |
+| questionset_id   | varchar(255) | NO   | MUL | NULL    |       |
++------------------+--------------+------+-----+---------+-------+
+    
+Table: submission
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| id              | varchar(255) | NO   | PRI | NULL    |       |
+| workerId        | varchar(255) | NO   |     | NULL    |       |
+| hitId           | varchar(255) | NO   |     | NULL    |       |#unique token
+| annotationId_id | varchar(255) | NO   | MUL | NULL    |       |#unique token maps to AMThits table
+| questionset_id  | varchar(255) | NO   | MUL | NULL    |       |#maps to QuestionSet table
+| answersGuess    | text         | NO   |     | NULL    |       |#selected answers from human on memqa questions
+| answersTrue     | text         | NO   |     | NULL    |       |#ground truth memqa answer
+| numCorrect      | float        | NO   |     | NULL    |       |#number of memqa questions correct
+| action          | text         | NO   |     | NULL    |       |#actions between last selection and submission
+| cameraAction    | text         | NO   |     | NULL    |       |#camera actions between last selection and submission
+| finalPostion    | text         | NO   |     | NULL    |       |#final viewpoint id at submission
+| timeElapsed     | text         | NO   |     | NULL    |       |#total time taken on memqa task (in seconds) 
++-----------------+--------------+------+-----+---------+-------+
+
+Table: selection
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| id              | varchar(255) | NO   | PRI | NULL    |       |
+| workerId        | varchar(255) | NO   |     | NULL    |       |
+| hitId           | varchar(255) | NO   |     | NULL    |       |
+| action          | text         | NO   |     | NULL    |       |
+| cameraAction    | text         | NO   |     | NULL    |       |
+| questionset_id  | varchar(255) | NO   | MUL | NULL    |       |#maps to QuestionSet table
+| questionId      | varchar(255) | NO   |     | NULL    |       |#specific question being answered out question list
+| selectedAnswer  | varchar(255) | NO   |     | NULL    |       |#selected answers from human
+| trueAnswer      | varchar(255) | NO   |     | NULL    |       |#ground truth answer
+| annotationId_id | varchar(255) | NO   | MUL | NULL    |       |#maps to AMThits table
+| created_at      | int(11)      | NO   |     | NULL    |       |#when the selection was made
+| timeElapsed     | text         | NO   |     | NULL    |       |#time elapsed since beginning of memqa task (in seconds)
++-----------------+--------------+------+-----+---------+-------+
+
+
+Table: assistance
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| id              | varchar(255) | NO   | PRI | NULL    |       |
+| workerId        | varchar(255) | NO   |     | NULL    |       |
+| hitId           | varchar(255) | NO   |     | NULL    |       |
+| action          | text         | NO   |     | NULL    |       |#nav actions between last action and assistance request
+| cameraAction    | text         | NO   |     | NULL    |       |#camera actions between last action and assistance request
+| currentPostion  | text         | NO   |     | NULL    |       |#final viewpoint id at time of assistance request
+| navAction       | text         | NO   |     | NULL    |       |#nav actions during assistance
+| navCameraAction | text         | NO   |     | NULL    |       |#camera actions during assistance    
+| questionset_id  | varchar(255) | NO   | MUL | NULL    |       |#maps to QuestionSet table
+| questionId      | varchar(255) | NO   |     | NULL    |       |#questionId human needs assistance with
+| objectNav       | varchar(255) | NO   |     | NULL    |       |#object or room assistant brings human to
+| distObjNav      | float        | NO   |     | NULL    |       |#distance of navigational assistance
+| created_at      | int(11)      | NO   |     | NULL    |       |#when the assistance was requested
+| timeElapsed     | text         | NO   |     | NULL    |       ||#time elapsed since beginning of memqa task (in seconds)
++-----------------+--------------+------+-----+---------+-------+
