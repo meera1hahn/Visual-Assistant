@@ -1,5 +1,5 @@
 # Visual-Assistant
-* This is an implementation of the paper: [Learning a Visually Grounded Memory Assistant](https://arxiv.org/)
+* This is an implementation of the paper: [Learning a Visually Grounded Memory Assistant](https://meerahahn.github.io/files/visual_assistant.pdf)
 * This repository contains the data, the data analysis and the results for TaskA presented in the paper
 * For information on how the dataset was collected or to get access to the AMT set up please contact the authors. 
 * This repository focuses Visual Memory Assistant tasks on the presented dataset
@@ -36,7 +36,7 @@ pre-commit install
 
 ## Citing
 
-If you use The Visually Grounded Memory Assistant Dataset in your research, please cite the following [paper](https://arxiv.org/):
+If you use The Visually Grounded Memory Assistant Dataset in your research, please cite the following [paper](https://meerahahn.github.io/files/visual_assistant.pdf):
 
 ```
 @inproceedings{hahn2020visualassistant,
